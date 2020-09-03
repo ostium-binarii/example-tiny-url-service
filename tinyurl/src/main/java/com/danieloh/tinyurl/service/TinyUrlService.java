@@ -29,7 +29,6 @@ public class TinyUrlService implements AppService {
             return tinyUrlId;
         }
 
-        //TODO: function to actually redirect the url.
         return repository.createTinyUrlId(originalUrl);
     }
 

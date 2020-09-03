@@ -4,6 +4,7 @@ import com.danieloh.tinyurl.exception.DuplicateOriginalUrlException;
 import com.danieloh.tinyurl.exception.DuplicateTinyUrlIdException;
 import com.danieloh.tinyurl.exception.MalformedUrlException;
 import com.danieloh.tinyurl.exception.NullOrBlankUrlException;
+import com.danieloh.tinyurl.exception.TinyUrlIdNotFoundException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import lombok.extern.slf4j.Slf4j;
@@ -64,6 +65,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("A data processing error occurred, try again later.");
+    }
+
+    @ExceptionHandler(TinyUrlIdNotFoundException.class)
+    public ResponseEntity<String> handleException(TinyUrlIdNotFoundException e) {
+        log.info("{}", e.getMessage(), e);
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body("Page not found!");
     }
 
 }
