@@ -40,14 +40,11 @@ class Repository {
 build fresh
 ./mvnw clean package
 
-test
-./mvnw something
-
 Start Service
 ./mvnw exec:java -Dexec.mainClass="com.danieloh.tinyurl.Application"
 
 call API
 curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"url":"blah"}' \
+  --request PUT \
+  --data '{"originalUrl":"https://github.com/ostium-binarii/example-tiny-url-service"}' \
   http://localhost:8080/api/generate

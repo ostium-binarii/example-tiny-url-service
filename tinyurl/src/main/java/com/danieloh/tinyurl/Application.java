@@ -19,13 +19,8 @@ public class Application implements ApplicationRunner {
 
 	@Override
 	public void run(final ApplicationArguments args) {
-		try {
-			log.info("The tiny URL service is running.");
-			// in real life would do other things like init the DB, etc.
-		} finally {
-			log.info("The tiny URL service is shutting down.");
-			// in real life would engage in clean up activities.
-		}
+		log.info("The tiny URL service is running.");
+		// in real life would do other things like init the DB, etc.
 	}
 
 }

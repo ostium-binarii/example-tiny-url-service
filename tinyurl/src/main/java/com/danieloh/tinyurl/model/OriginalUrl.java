@@ -1,15 +1,15 @@
 package com.danieloh.tinyurl.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 @EqualsAndHashCode
-public class TinyUrl {
-    private String tinyUrl;
+public class OriginalUrl {
+    private String originalUrl;
 }

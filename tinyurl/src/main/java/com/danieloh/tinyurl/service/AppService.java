@@ -1,5 +1,8 @@
 package com.danieloh.tinyurl.service;
 
+
 public interface AppService {
-    void generateUrl();
+    String generateTinyUrl(String originalUrl);
+
+    String getOriginalUrl(String tinyUrlId);
 }
